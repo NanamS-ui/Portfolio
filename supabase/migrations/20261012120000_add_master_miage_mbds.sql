@@ -18,25 +18,27 @@ INSERT INTO formations (
 ) VALUES (
   'Université Côte d''Azur',
   'logos/universite-cote-azur.png',
-  'Master MIAGE MBDS — Mobiquité, Bases de Données et Intégration Systèmes',
-  'Master''s Degree MIAGE MBDS — Mobiquity, Databases and Systems Integration',
+  'Master MIAGE MBDS — Mobiquité, Big Data et Intégration de Systèmes',
+  'Master''s Degree MIAGE MBDS — Mobiquity, Big Data and Systems Integration',
   '2025 - Présent',
   'Antananarivo, Madagascar',
   'Master de l''Université Côte d''Azur suivi en partenariat avec IT University.',
   'Master''s degree from Université Côte d''Azur, delivered in partnership with IT University.',
   ARRAY[
-    'Développement mobile',
-    'Bases de données',
-    'Intégration de systèmes',
-    'Architecture logicielle',
-    'Big Data'
+    'Big Data & analyse de données',
+    'Cloud',
+    'Développement Backend & Frontend',
+    'DevOps',
+    'IoT',
+    'Cybersécurité'
   ],
   ARRAY[
-    'Mobile Development',
-    'Databases',
-    'Systems Integration',
-    'Software Architecture',
-    'Big Data'
+    'Big Data & Data Analysis',
+    'Cloud',
+    'Backend & Frontend Development',
+    'DevOps',
+    'IoT',
+    'Cybersecurity'
   ],
   0
 );
