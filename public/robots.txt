@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nanams-ui.github.io/Porfolio/sitemap.xml
+Sitemap: https://nanams-ui.github.io/Portfolio/sitemap.xml
