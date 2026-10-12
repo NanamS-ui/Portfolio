@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://porfolio-omega-mocha.vercel.app/sitemap.xml
+Sitemap: https://nanams-ui.github.io/Porfolio/sitemap.xml
