@@ -10,6 +10,13 @@ import { optimizeImageUrl } from '@/lib/cloudinary';
 import { useLanguage } from '@/components/language-provider';
 import { localize, localizeList } from '@/lib/localize';
 
+// Logos stored as relative paths (e.g. "logos/x.png") live in /public, so they need the
+// GitHub Pages basePath; absolute URLs (Cloudinary, etc.) are used as-is.
+function resolveLogoUrl(url: string): string {
+  if (/^https?:\/\//.test(url)) return url;
+  return `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/${url.replace(/^\//, '')}`;
+}
+
 function FormationCardSkeleton() {
   return (
     <div className="rounded-2xl surface-card p-5 md:p-6">
@@ -97,7 +104,7 @@ export default function Formation() {
                                 <div className="flex items-start gap-4">
                                     {f.logo_url && (
                                         <motion.img
-                                            src={optimizeImageUrl(f.logo_url, { width: 112, height: 112, crop: 'fit' })}
+                                            src={optimizeImageUrl(resolveLogoUrl(f.logo_url), { width: 112, height: 112, crop: 'fit' })}
                                             alt={f.institution}
                                             className="h-12 w-12 md:h-14 md:w-14 rounded-xl bg-white dark:bg-slate-800 object-contain p-1 border border-slate-200 dark:border-slate-700"
                                             loading="lazy"
@@ -113,7 +120,7 @@ export default function Formation() {
                                                 {localize(f.diploma, f.diploma_en, language)}
                                             </h3>
                                             <span className="text-xs md:text-sm text-slate-500 dark:text-slate-400 whitespace-nowrap">
-                                                {f.period}
+                                                {f.period.replace(/pr[ée]sent/i, t.experience.present)}
                                             </span>
                                         </div>
                                         <p className="text-blue-700 dark:text-blue-400 mt-1 font-medium">{f.institution}</p>
